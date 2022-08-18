@@ -97,6 +97,21 @@ public class AddressBook {
         currentAddressBookName=AddressBookName;
     }
 
+    void selectAddressBook(){
+        System.out.println(AddressBookList.keySet());
+        System.out.println("enter name of address book");
+        String addressBookName=scanner.next();
+
+        for (String key :AddressBookList.keySet()) {
+            if (key.equalsIgnoreCase(addressBookName)){
+                currentAddressBook=AddressBookList.get(key);
+                currentAddressBookName=key;
+            }
+        }
+        System.out.println("current AddressBook is "+currentAddressBookName);
+
+    }
+
     void showContacts(ArrayList addressBook){
         System.out.println("Contacts: ");
         for (Object p : addressBook) {
