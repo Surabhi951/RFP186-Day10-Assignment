@@ -3,28 +3,29 @@ package com.bridgelabz.addressBook;
 import java.util.Scanner;
 
 public class AddressBook {
-   static Scanner sc=new Scanner(System.in);
-   ContactPerson createContact(){
-        System.out.println("Enter first name: ");
-        String firstName=sc.next();
-        System.out.println("Enter last name: ");
-        String lastName=sc.next();
-        System.out.println("Enter address: ");
-        String address=sc.next();
-        System.out.println("Enter city: ");
-        String city=sc.next();
-        System.out.println("Enter state: ");
-        String state=sc.next();
-        System.out.println("Enter ZipCode: ");
-        int zipCode=sc.nextInt();
-        System.out.println("Enter phoneNumber: ");
-        long phoneNumber=sc.nextLong();
-        System.out.println("Enter Email: ");
-        String email=sc.next();
 
-        ContactPerson person=new ContactPerson(firstName,lastName,address,city,state,zipCode,phoneNumber,email);
-        System.out.println("created new contact");
-        return person;
+      Scanner sc=new Scanner(System.in);
+
+     ContactPerson createContact(){
+          ContactPerson person=new ContactPerson();
+          System.out.print("Enter First Name :");
+          person.setFirstName(sc.next());
+          System.out.print("Enter Last Name :");
+          person.setLastName(sc.next());
+          System.out.print("Enter Address :");
+          person.setAddress(sc.next());
+          System.out.print("Enter City :");
+          person.setCity(sc.next());
+          System.out.print("Enter State :");
+          person.setState(sc.next());
+          System.out.print("Enter ZipCode :");
+          person.setZipCode(sc.nextInt());
+          System.out.print("Enter Phone Number :");
+          person.setPhoneNumber(sc.nextLong());
+          System.out.print("Enter email :");
+          person.setEmail(sc.next());
+          System.out.println("created new contact");
+          return person;
     }
 
 }
