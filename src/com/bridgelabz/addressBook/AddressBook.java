@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class AddressBook {
     ArrayList<ContactPerson> AddressBook= new ArrayList<>();
-    static Scanner sc=new Scanner(System.in);
+    Scanner sc=new Scanner(System.in);
+    
     ContactPerson createContact(){
         ContactPerson person=new ContactPerson();
         System.out.print("Enter First Name :");
@@ -30,7 +31,6 @@ public class AddressBook {
     void addContact(){
         ContactPerson contactPerson =createContact();
         AddressBook.add(contactPerson);
-
         System.out.println(contactPerson);
         System.out.println("Contact Added Successfully...");
     }
