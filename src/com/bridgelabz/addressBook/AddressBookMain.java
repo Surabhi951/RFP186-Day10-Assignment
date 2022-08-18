@@ -6,21 +6,21 @@ public class AddressBookMain {
     public static void main(String[] args) {
         System.out.println("Welcome to Address-book");
         AddressBook addressBook = new AddressBook();
-        System.out.println(addressBook.createContact());
         Scanner sc = new Scanner(System.in);
 
         boolean flag1=true;
         while (flag1){
-            System.out.println("Select option: \n" +
-                    "1.Add Contact \n" +
-                    "2.Exit");
-            int option=sc.nextInt();
-            switch (option){
+            System.out.println("******************\nSelect Option :");
+            System.out.println("1.Add Contact\n2.Edit Contact\n3.Exit");
+            int option = sc.nextInt();
+            switch (option) {
                 case 1:
-                    ContactPerson contact=addressBook.createContact();
-                    addressBook.addContact(contact);
+                    addressBook.addContact();
                     break;
                 case 2:
+                    addressBook.editContact();
+                    break;
+                case 3:
                     flag1=false;
                     break;
                 default:
@@ -28,6 +28,5 @@ public class AddressBookMain {
                     break;
             }
         }
-
     }
 }
