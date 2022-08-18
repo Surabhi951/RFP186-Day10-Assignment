@@ -6,6 +6,24 @@ public class AddressBookMain {
     public static void main(String[] args) {
         System.out.println("Welcome to Address-book");
         AddressBook addressBook = new AddressBook();
-        System.out.println(addressBook.createContact());
-     }
+        Scanner sc = new Scanner(System.in);
+
+        boolean flag1=true;
+        while (flag1){
+            System.out.println("******************\nSelect Option :");
+            System.out.println("1.Add Contact\n2.Exit");
+            int option = sc.nextInt();
+            switch (option) {
+                case 1:
+                    addressBook.addContact();
+                    break;
+                case 2:
+                    flag1=false;
+                    break;
+                default:
+                    System.out.println(option+" is not valid option");
+                    break;
+            }
+        }
+    }
 }
