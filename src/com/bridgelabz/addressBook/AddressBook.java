@@ -3,14 +3,14 @@ package com.bridgelabz.addressBook;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-
 public class AddressBook {
+
     static HashMap<String,ArrayList> AddressBookList=new HashMap<>();
     static ArrayList <ContactPerson> currentAddressBook;
     static String currentAddressBookName;
     static Scanner scanner=new Scanner(System.in);
 
-    ContactPerson createContact(){
+   ContactPerson createContact(){
         System.out.println("Enter first name");
         String firstName=scanner.next();
         System.out.println("Enter last name");
@@ -66,7 +66,7 @@ public class AddressBook {
         }
     }
 
-    void deleteContact(){
+     void deleteContact(){
         boolean isContactFound=false;
         System.out.println("enter name to delete contact");
         String name=scanner.next();
