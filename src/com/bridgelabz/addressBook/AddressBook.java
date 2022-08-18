@@ -2,11 +2,10 @@ package com.bridgelabz.addressBook;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class AddressBook {
     ArrayList<ContactPerson> AddressBook= new ArrayList<>();
     Scanner sc=new Scanner(System.in);
-
+    
     ContactPerson createContact(){
         ContactPerson person=new ContactPerson();
         System.out.print("Enter First Name :");
@@ -71,7 +70,7 @@ public class AddressBook {
         }
     }
 
-    void deleteContact(){
+     void deleteContact(){
         boolean isContactFound=false;
         System.out.println("enter name to delete contact");
         String name =sc.next();
