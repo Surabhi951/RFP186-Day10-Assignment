@@ -39,6 +39,9 @@ public class AddressBookMain {
                     addressBook.addNewAddressBook();
                     break;
                 case 6:
+                    addressBook.selectAddressBook();
+                    break;
+                case 7:
                     flag1=false;
                     break;
                 default:
