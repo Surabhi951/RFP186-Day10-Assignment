@@ -2,7 +2,7 @@ package com.bridgelabz.addressBook;
 
 import java.util.Scanner;
 
-public class AddressBook {
+public class AddressBook{
 
       Scanner sc=new Scanner(System.in);
 
@@ -27,5 +27,4 @@ public class AddressBook {
           System.out.println("created new contact");
           return person;
     }
-
 }
