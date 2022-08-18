@@ -1,9 +1,14 @@
 package com.bridgelabz.addressBook;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class AddressBook {
-   static Scanner sc=new Scanner(System.in);
+    // static HashMap<String,ArrayList> AddressBookList=new HashMap<>();
+     static Scanner sc=new Scanner(System.in);
+     static ArrayList<ContactPerson> currentAddressBook;
+     static String currentAddressBookName;
    ContactPerson createContact(){
         System.out.println("Enter first name: ");
         String firstName=sc.next();
@@ -26,5 +31,11 @@ public class AddressBook {
         System.out.println("created new contact");
         return person;
     }
+
+     void addContact(ContactPerson person){
+          currentAddressBook.add(person);
+          System.out.println("contact added to AddressBook "+currentAddressBookName);
+          System.out.println(person);
+     }
 
 }
