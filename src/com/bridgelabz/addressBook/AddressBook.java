@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBook {
-    ArrayList<ContactPerson> AddressBook= new ArrayList<>();
-    Scanner sc=new Scanner(System.in);
+    ArrayList<ContactPerson> AddressBook = new ArrayList<>();
+    Scanner sc = new Scanner(System.in);
 
-    ContactPerson createContact(){
-        ContactPerson person=new ContactPerson();
+    ContactPerson createContact() {
+        ContactPerson person = new ContactPerson();
         System.out.print("Enter First Name :");
         person.setFirstName(sc.next());
         System.out.print("Enter Last Name :");
@@ -30,8 +30,8 @@ public class AddressBook {
         return person;
     }
 
-    void addContact(){
-        ContactPerson contactPerson =createContact();
+    void addContact() {
+        ContactPerson contactPerson = createContact();
         AddressBook.add(contactPerson);
         System.out.println(contactPerson);
         System.out.println("Contact Added Successfully...");
@@ -72,14 +72,14 @@ public class AddressBook {
         }
     }
 
-    void deleteContact(){
-        boolean isContactFound=false;
+    void deleteContact() {
+        boolean isContactFound = false;
         System.out.println("enter name to delete contact");
-        String name =sc.next();
-        for (ContactPerson contactPerson : AddressBook){
+        String name = sc.next();
+        for (ContactPerson contactPerson : AddressBook) {
             if (contactPerson.getFirstName().equalsIgnoreCase(name)) {
                 System.out.println("contact found:");
-                isContactFound=true;
+                isContactFound = true;
                 System.out.println(contactPerson);
                 System.out.println("confirm to delete (y/n)");
                 if (sc.next().equalsIgnoreCase("y")) {
@@ -93,6 +93,7 @@ public class AddressBook {
             System.out.println("Opps... contact not found");
         }
     }
+
     void showContacts() {
         if (AddressBook.isEmpty()) {
             System.out.println("No contacts to display");
@@ -100,6 +101,7 @@ public class AddressBook {
             for (ContactPerson contactPerson : AddressBook) {
                 System.out.println(contactPerson);
             }
+
         }
     }
 }
