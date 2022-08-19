@@ -5,21 +5,15 @@ import java.util.Scanner;
 public class AddressBookMain {
     public static void main(String[] args) {
         System.out.println("Welcome to Address-book");
-        AddressBook addressBook=new AddressBook();
-        Scanner scanner=new Scanner(System.in);
+        AddressBook addressBook = new AddressBook();
+        Scanner scanner = new Scanner(System.in);
         addressBook.addNewAddressBook();
 
-        boolean flag1=true;
+        boolean flag1 = true;
         while (flag1){
             System.out.println("*************\n"+AddressBook.AddressBookList.keySet());
             System.out.println("current AddressBook Name: "+addressBook.currentAddressBookName);
-            System.out.println("Select option: \n" +
-                    "1.Add Contact \n" +
-                    "2.Edit Contact\n" +
-                    "3.Show Contacts \n" +
-                    "4.Delete Contact \n" +
-                    "5.Add New AddressBook \n" +
-                    "6.Exit");
+            System.out.println("Select option\n1.Add Contact\n2.Edit Contact\n3.Show Contacts\n4.Delete Contact\n5.Add New AddressBook\n6.Select AddressBook\n7.Exit");
             int option=scanner.nextInt();
             switch (option){
                 case 1:
