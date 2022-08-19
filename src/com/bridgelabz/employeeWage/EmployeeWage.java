@@ -1,5 +1,4 @@
 package com.bridgelabz.employeeWage;
-
 public class EmployeeWage {
     static final int FULL_DAY_HOUR = 8;
     static final int PART_TIME__HOUR = 4;
