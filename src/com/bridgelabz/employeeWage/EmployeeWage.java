@@ -4,7 +4,6 @@ public class EmployeeWage {
     static final int PART_TIME__HOUR = 4;
     static final int IS_FULL_TIME = 2;
     static final int IS_PART_TIME = 1;
-
     static void computeEmpWage(String company, int WAGE_PER_HOUR, int WORKING_DAY_PER_MONTH, int WORKING_HOUR_PER_MONTH) {
         int empPresent = (int) (Math.floor(Math.random() * 10) % 3);
         int dayCount = 1;
