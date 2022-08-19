@@ -1,12 +1,10 @@
 package com.bridgelabz.employeeWage;
-
 public class EmployeeWage {
     static final int FULL_DAY_HOUR = 8;
     static final int PART_TIME__HOUR = 4;
     static final int IS_FULL_TIME = 2;
     static final int IS_PART_TIME = 1;
-
-    public static int computeEmpWage(String company, int WAGE_PER_HOUR, int WORKING_DAY_PER_MONTH, int WORKING_HOUR_PER_MONTH) {
+    static void computeEmpWage(String company, int WAGE_PER_HOUR, int WORKING_DAY_PER_MONTH, int WORKING_HOUR_PER_MONTH) {
         int empPresent = (int) (Math.floor(Math.random() * 10) % 3);
         int dayCount = 1;
         int workingHours = 0;
@@ -34,9 +32,7 @@ public class EmployeeWage {
         }
         System.out.println("working Hours: " + workingHours);
         System.out.println("Total wage for company: " + company + " is: " + totalWage);
-        return totalWage;
     }
-
     public static void main(String[] args) {
         System.out.println("Welcome to employee wage computation");
         computeEmpWage("Amazon", 20, 2, 10 );
