@@ -5,7 +5,8 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class AddressBook {
-    static HashMap<String,ArrayList> AddressBookList=new HashMap<>();
+
+    static HashMap<String,ArrayList> AddressBookList = new HashMap<>();
     static ArrayList <ContactPerson> currentAddressBook;
     static String currentAddressBookName;
     static Scanner sc = new Scanner(System.in);
@@ -38,6 +39,7 @@ public class AddressBook {
         System.out.println("contact added to AddressBook "+currentAddressBookName);
         System.out.println(person);
     }
+
     void editContact(){
         System.out.println("Enter name to edit contact");
         String name = sc.next();
@@ -65,8 +67,8 @@ public class AddressBook {
             }
         }
     }
-
-    void deleteContact(){
+            
+     void deleteContact(){
         boolean isContactFound = false;
         System.out.println("Enter name to delete contact: ");
         String name = sc.next();
@@ -87,10 +89,11 @@ public class AddressBook {
             System.out.println("Opps... contact not found");
         }
     }
+    
     void addNewAddressBook(){
         System.out.println("Enter name for AddressBook: ");
         String AddressBookName = sc.next();
-        ArrayList <ContactPerson> AddressBook=new ArrayList();
+        ArrayList <ContactPerson> AddressBook = new ArrayList();
         AddressBookList.put(AddressBookName,AddressBook);
         System.out.println("new AddressBook created");
         currentAddressBook = AddressBookList.get(AddressBookName);
@@ -105,12 +108,11 @@ public class AddressBook {
         for (String key :AddressBookList.keySet()) {
             if (key.equalsIgnoreCase(addressBookName)){
                 currentAddressBook = AddressBookList.get(key);
-                currentAddressBookName=key;
+                currentAddressBookName = key;
             }
         }
         System.out.println("current AddressBook is: "+currentAddressBookName);
-
-    }
+   }
 
     void showContacts(ArrayList addressBook){
         System.out.println("Contacts: ");
@@ -120,3 +122,5 @@ public class AddressBook {
         }
     }
 }
+
+
