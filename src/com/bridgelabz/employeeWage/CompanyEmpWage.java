@@ -1,5 +1,10 @@
 package com.bridgelabz.employeeWage;
 
+interface ICompanyWage{
+    void addCompanyEmpWage(String company, int wagePerHour, int workingDayPerMonth, int workingHourPerMonth);
+    void computeEmpWage();
+}
+
 public class CompanyEmpWage {
    final String company;
    final int wagePerHour;
