@@ -26,6 +26,10 @@ public class EmpWageBuilder implements ICompanyWage{
         }
     }
 
+    public int totalWageByCompany(String company){
+        return companyEmpWageMap.get(company).totalWage;
+    }
+
     int computeEmpWage(CompanyEmpWage companyEmpWage){
         int empPresent = (int) (Math.floor(Math.random() * 10) % 3);
         int dayCount = 1;
@@ -53,7 +57,6 @@ public class EmpWageBuilder implements ICompanyWage{
             dayCount++;
         }
         System.out.println("working Hours: " + workingHours);
-        System.out.println("Total wage for company: " + companyEmpWage.company + " is: " + companyEmpWage.totalWage);
         return companyEmpWage.totalWage;
     }
 }

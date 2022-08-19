@@ -8,5 +8,6 @@ public class EmployeeWage {
         empWageBuilder.addCompanyEmpWage("Reliance", 10, 3, 10);
         empWageBuilder.addCompanyEmpWage("Flipcart", 15, 5, 30);
         empWageBuilder.computeEmpWage();
+        System.out.println("Total employee wage for Amazon is "+empWageBuilder.totalWageByCompany("Amazon"));
     }
 }
