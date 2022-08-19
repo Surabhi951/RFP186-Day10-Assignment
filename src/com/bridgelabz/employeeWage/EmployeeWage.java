@@ -9,9 +9,8 @@ public class EmployeeWage {
     static final int WORKING_DAY_PER_MONTH = 20;
     static final int WORKING_HOUR_PER_MONTH = 100;
 
-    public static void main(String[] args) {
-        System.out.println("Welcome to employee wage computation");
-        int empPresent = (int) (Math.floor(Math.random()*10) % 3);
+    public static int computeEmpWage() {
+        int empPresent = (int) (Math.floor(Math.random() * 10) % 3);
         int dayCount = 1;
         int workingHours = 0;
         int totalWage = 0;
@@ -33,10 +32,16 @@ public class EmployeeWage {
                     System.out.println("Employee is Absent");
             }
             totalWage += empWage;
-            System.out.println("Employee daily wage Day : " +dayCount + " => " + empWage);
+            System.out.println("Employee daily wage Day : " + dayCount + " => " + empWage);
             dayCount++;
         }
         System.out.println("working Hours: " + workingHours);
         System.out.println("Total wage: " + totalWage);
+        return totalWage;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Welcome to employee wage computation");
+        computeEmpWage();
     }
 }
