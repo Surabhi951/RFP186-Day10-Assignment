@@ -2,6 +2,7 @@ package com.bridgelabz.addressBook;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
 public class AddressBook {
     ArrayList<ContactPerson> AddressBook= new ArrayList<>();
     Scanner sc=new Scanner(System.in);
