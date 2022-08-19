@@ -1,30 +1,31 @@
 package com.bridgelabz.employeeWage;
 
+import java.util.ArrayList;
+
 public class EmpWageBuilder implements ICompanyWage{
     static final int FULL_DAY_HOUR = 8;
     static final int PART_TIME__HOUR = 4;
     static final int IS_FULL_TIME = 2;
     static final int IS_PART_TIME = 1;
 
-    int noOfCompany = 0;
-    CompanyEmpWage[] companyEmpWages = new CompanyEmpWage[5];
+    ArrayList<CompanyEmpWage> companyEmpWageArrayList = new ArrayList<>();
 
     public void addCompanyEmpWage(String company, int wagePerHour, int workingDayPerMonth, int workingHourPerMonth) {
-        companyEmpWages[noOfCompany] = new CompanyEmpWage(company,wagePerHour,workingDayPerMonth,workingHourPerMonth);
-        noOfCompany++;
+        CompanyEmpWage companyEmpWage = new CompanyEmpWage(company,wagePerHour,workingDayPerMonth,workingHourPerMonth);
+        companyEmpWageArrayList .add(companyEmpWage);
     }
 
     public void computeEmpWage(){
-        for(int i = 0; i < noOfCompany; i++){
-            computeEmpWage(companyEmpWages[i]);
+        for (CompanyEmpWage companyEmpWage : companyEmpWageArrayList){
+            companyEmpWage.setTotalWage(computeEmpWage(companyEmpWage));
+            System.out.println(companyEmpWage);
         }
     }
 
-    void computeEmpWage(CompanyEmpWage companyEmpWage){
+    int computeEmpWage(CompanyEmpWage companyEmpWage){
         int empPresent = (int) (Math.floor(Math.random() * 10) % 3);
         int dayCount = 1;
         int workingHours = 0;
-        int totalWage = 0;
 
         while (dayCount <= companyEmpWage.workingDayPerMonth && workingHours <= companyEmpWage.workingHourPerMonth) {
             int empWage = 0;
@@ -49,5 +50,6 @@ public class EmpWageBuilder implements ICompanyWage{
         }
         System.out.println("working Hours: " + workingHours);
         System.out.println("Total wage for company: " + companyEmpWage.company + " is: " + companyEmpWage.totalWage);
+        return companyEmpWage.totalWage;
     }
 }
