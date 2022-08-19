@@ -6,39 +6,36 @@ public class EmpWageBuilder {
     static final int IS_FULL_TIME = 2;
     static final int IS_PART_TIME = 1;
 
-    String company;
-    int wagePerHour;
-    int workingDayPerMonth;
-    int workingHourPerMonth;
-    int totalWage;
+    int noOfCompany = 0;
+    CompanyEmpWage[] companyEmpWages = new CompanyEmpWage[5];
 
-    public EmpWageBuilder(String company, int wagePerHour, int workingDayPerMonth, int workingHourPerMonth) {
-        this.company = company;
-        this.wagePerHour = wagePerHour;
-        this.workingDayPerMonth = workingDayPerMonth;
-        this.workingHourPerMonth = workingHourPerMonth;
-    }
-
-    @Override
-    public String toString() {
-        return "Total wage for company: " + company + " is: " + totalWage;
+    void addCompanyEmpWage(String company, int wagePerHour, int workingDayPerMonth, int workingHourPerMonth) {
+        companyEmpWages[noOfCompany] = new CompanyEmpWage(company,wagePerHour,workingDayPerMonth,workingHourPerMonth);
+        noOfCompany++;
     }
 
     void computeEmpWage(){
+        for(int i = 0; i < noOfCompany; i++){
+            computeEmpWage(companyEmpWages[i]);
+        }
+    }
+
+    void computeEmpWage(CompanyEmpWage companyEmpWage){
         int empPresent = (int) (Math.floor(Math.random() * 10) % 3);
         int dayCount = 1;
         int workingHours = 0;
+        int totalWage = 0;
 
-        while (dayCount <= workingDayPerMonth && workingHours <= workingHourPerMonth) {
+        while (dayCount <= companyEmpWage.workingDayPerMonth && workingHours <= companyEmpWage.workingHourPerMonth) {
             int empWage = 0;
             switch (empPresent) {
                 case IS_FULL_TIME:
-                    empWage = wagePerHour * FULL_DAY_HOUR;
+                    empWage = companyEmpWage.wagePerHour * FULL_DAY_HOUR;
                     workingHours += FULL_DAY_HOUR;
                     System.out.println("Employee FULL-TIME");
                     break;
                 case IS_PART_TIME:
-                    empWage = wagePerHour * PART_TIME__HOUR;
+                    empWage = companyEmpWage.wagePerHour * PART_TIME__HOUR;
                     workingHours += PART_TIME__HOUR;
                     System.out.println("Employee PART-TIME");
                     break;
@@ -46,10 +43,11 @@ public class EmpWageBuilder {
                 default:
                     System.out.println("Employee is Absent");
             }
-            totalWage += empWage;
+            companyEmpWage.totalWage += empWage;
             System.out.println("Employee daily wage Day : " + dayCount + " => " + empWage);
             dayCount++;
         }
         System.out.println("working Hours: " + workingHours);
+        System.out.println("Total wage for company: " + companyEmpWage.company + " is: " + companyEmpWage.totalWage);
     }
 }
