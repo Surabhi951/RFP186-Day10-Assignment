@@ -35,7 +35,6 @@ public class EmployeeWage {
         System.out.println("working Hours: " + workingHours);
         System.out.println("Total wage for company: " + company + " is: " + totalWage);
     }
-
     public static void main(String[] args) {
         System.out.println("Welcome to employee wage computation");
         computeEmpWage("Amazon", 20, 2, 10 );
